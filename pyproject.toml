@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sat2geo-aarhus"
+version = "0.1.0"
+description = "Aarhus satellite image to coordinate locator using DINOv2 embeddings and Faiss vector search."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Sat2Geo Aarhus contributors" }]
+dependencies = [
+  "numpy>=1.24",
+  "Pillow>=10.0",
+  "torch>=2.1",
+  "transformers>=4.40",
+  "faiss-cpu>=1.8",
+  "opencv-python>=4.8",
+  "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+build-index = [
+  "rasterio>=1.3",
+  "pyproj>=3.6",
+  "mercantile>=1.2",
+  "requests>=2.31",
+]
+exe = ["pyinstaller>=6.0"]
+
+[project.scripts]
+sat2geo = "sat2geo.cli:main"
+
+[tool.setuptools]
+packages = ["sat2geo"]

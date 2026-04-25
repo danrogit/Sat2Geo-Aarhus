@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-label="Aarhus demo coverage diagram">
+  <rect width="1200" height="520" fill="#f5f7f2"/>
+  <rect x="70" y="70" width="1060" height="360" rx="8" fill="#d8e6cf" stroke="#6b7f65" stroke-width="2"/>
+  <path d="M155 430 C250 360 280 250 405 230 C510 214 590 270 700 238 C820 202 910 95 1040 80" fill="none" stroke="#628cb0" stroke-width="34" stroke-linecap="round" opacity="0.78"/>
+  <path d="M170 360 L1030 110" stroke="#ffffff" stroke-width="8" stroke-linecap="round" opacity="0.75"/>
+  <path d="M265 100 L350 430 M480 100 L585 430 M710 95 L735 425 M900 98 L850 426" stroke="#ffffff" stroke-width="5" opacity="0.75"/>
+  <rect x="520" y="172" width="282" height="190" fill="none" stroke="#df3f32" stroke-width="7"/>
+  <circle cx="640" cy="260" r="12" fill="#df3f32"/>
+  <text x="600" y="255" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="#1e2a20">Aarhus</text>
+  <text x="70" y="470" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#364238">Bundled z20 demo: 15,618 vectors, approx. 56.1403-56.1598 lat, 10.1903-10.2194 lon</text>
+</svg>

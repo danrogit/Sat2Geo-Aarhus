@@ -1,0 +1,20 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+dist/
+build/
+*.spec
+
+# Large generated map sources. The Aarhus demo ships chips/indexes, but users
+# should rebuild these for their own areas instead of committing raw rasters.
+data/raw/
+data/work/
+models/
+
+# Local query outputs
+outputs/
+*.log
