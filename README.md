@@ -19,6 +19,18 @@ This repository provides a compact, ready-to-run demo and toolkit for local aeri
 - Includes scripts to build your own database from GeoTIFF/XYZ satellite tiles.
 - Includes a tiny Tkinter GUI that can be packaged as a Windows EXE.
 
+## How It Works
+
+- Input: a cropped satellite or map image (query).
+- The query is encoded with the `facebook/dinov2-base` vision model to produce a fixed-size embedding.
+- A local Faiss approximate-nearest-neighbor index (built from dataset embeddings) is searched to retrieve the top-k matching chips.
+- Retrieved chip IDs are joined to geolocation metadata stored in the SQLite metadata DB to produce candidate coordinates.
+- Candidates are reranked by embedding similarity (and optionally by additional heuristics) and fused to form a single best coordinate estimate (e.g., a score-weighted average or top-cluster center).
+
+Build pipeline (scripts): `download_tiles.py` -> `chip_tiles.py` -> `embed_tiles.py` -> `build_faiss_index.py`. These scripts convert XYZ/GeoTIFF tiles into overlapping chips, compute embeddings, and build the Faiss index used at query time.
+
+GUI / CLI: The CLI (`sat2geo`) encodes and queries from the command line; `sat2geo_gui.py` is a tiny Tkinter frontend that sends selected images to the same locator backend.
+
 ## Demo Coverage
 
 The bundled index covers part of Aarhus, Denmark at zoom level 20:
@@ -123,12 +135,6 @@ docs/                     build and scaling notes
 - Results depend on image style, zoom, season, rotation, cropping, and imagery provider.
 - The included downloader uses an XYZ tile URL template. Respect provider terms and prefer open data for redistributable datasets.
 - Raw GeoTIFFs are not committed because they are large.
-
-## Technical Name
-
-The short project name is **Sat2Geo Aarhus**. A more academic description is:
-
-> Local aerial-image geolocalization via self-supervised vision embeddings and approximate nearest-neighbor search.
 
 ## License
 
