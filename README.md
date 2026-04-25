@@ -8,7 +8,8 @@ Sat2Geo Aarhus is a small open-source geolocalization demo: give it a satellite-
 
 This repo intentionally ships only an Aarhus demo index. To locate images across all of France, Denmark, or another large region, users must build a larger searchable database first.
 
-Important: code and imagery are separate. Before publishing a public GitHub repo with bundled chips/indexes, confirm that your imagery license allows redistribution. See [DATA_NOTICE.md](DATA_NOTICE.md).
+This repository provides a compact, ready-to-run demo and toolkit for local aerial-image geolocalization. It includes a command-line locator (`sat2geo`), helper scripts to build an index from GeoTIFF/XYZ tiles, and a small Tkinter GUI — all intended to help developers and researchers prototype and extend a local image-to-coordinate retrieval pipeline.
+
 
 ## What It Does
 
@@ -131,4 +132,4 @@ The short project name is **Sat2Geo Aarhus**. A more academic description is:
 
 ## License
 
-Code is MIT licensed. Check imagery/data provider licenses before redistributing derived image chips or indexes.
+Code is MIT licensed.
